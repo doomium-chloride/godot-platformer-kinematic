@@ -3,6 +3,7 @@ extends Area2D
 # Collectible that disappears when the player touches it.
 
 onready var animation_player = $AnimationPlayer
+onready var global = get_node("/root/Game/Global")
 
 # The Coins only detects collisions with the Player thanks to its collision mask.
 # This prevents other characters such as enemies from picking up coins.
@@ -13,3 +14,4 @@ onready var animation_player = $AnimationPlayer
 # Click the AnimationPlayer node to see the animation timeline.
 func _on_body_entered(_body):
 	animation_player.play("picked")
+	global.emit_signal("coinCollected")

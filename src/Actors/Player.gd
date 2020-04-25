@@ -1,7 +1,6 @@
 class_name Player
 extends Actor
 
-
 const FLOOR_DETECT_DISTANCE = 20.0
 
 export(String) var action_suffix = ""
@@ -11,6 +10,9 @@ onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var shoot_timer = $ShootAnimation
 onready var gun = $Sprite/Gun
+
+onready var global = get_node("/root/Game/Global")
+
 
 
 func _ready():
